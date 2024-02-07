@@ -2,6 +2,8 @@ const apiUrl = "https://tripy-express-student-neog.replit.app/destinations";
 
 const destinationInputForm = document.querySelector('#destinationInputForm');
 
+
+
 destinationInputForm.addEventListener('submit', function (event) {
     event.preventDefault()
 
@@ -9,6 +11,7 @@ destinationInputForm.addEventListener('submit', function (event) {
     const destinationLocationInput = document.querySelector('#destinationLocationInput');
     const destinationDescriptionInput = document.querySelector('#destinationDescriptionInput');
     const destinationRatingInput = document.querySelector('#destinationRatingInput');
+    const successMsg = document.querySelector('#successMsg');
 
     const newDestinationObj = {
         name: destinationNameInput.value,
@@ -30,8 +33,11 @@ destinationInputForm.addEventListener('submit', function (event) {
         .then(function (data) {
             if (data) {
                 console.log(data);
+                successMsg.textContent = "Destination Added Successfully..."
             }
         })
-
-
+        .catch(function (error) {
+            console.log("Error", error);
+            successMsg.textContent = "Oops, Something went wrong...."
+        })
 })
