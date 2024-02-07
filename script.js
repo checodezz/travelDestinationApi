@@ -37,6 +37,7 @@ destinationInputForm.addEventListener('submit', function (event) {
                 console.log(data);
                 successMsg.textContent = "Destination Added Successfully..."
                 destinationInputForm.reset();
+                showDestinationsCard.innerHTML = '';
             }
         })
         .catch(function (error) {
@@ -54,6 +55,7 @@ getDestinationsBtn.addEventListener('click', function () {
             return response.json()
         })
         .then(function (data) {
+            showDestinationsCard.innerHTML = '';
             createDestinationCard(data)
         })
 
