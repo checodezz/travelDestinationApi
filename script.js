@@ -58,6 +58,10 @@ getDestinationsBtn.addEventListener('click', function () {
             showDestinationsCard.innerHTML = '';
             createDestinationCard(data)
         })
+        .catch(function (error) {
+            console.log('Error: ', error);
+            showDestinationsCard.textContent = "Unable to fetch data from API"
+        })
 
 })
 
