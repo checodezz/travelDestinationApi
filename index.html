@@ -14,14 +14,24 @@
 </head>
 
 <body class="container">
-    <header>
+    <header class="my-4">
         <h1>Travel Destinations</h1>
     </header>
 
     <main>
-        <h2>Add Destination</h2>
+
+        <div>
+            <h2>Get Destinations</h2>
+            <button id="getDestinationsBtn" class="btn btn-primary m-2">Get Destination</button><br><br>
+        </div>
+
+        <div id="showDestinationsCard">
+
+        </div>
 
         <form id="destinationInputForm">
+            <h2>Add Destination</h2>
+
             <label for="destinationNameInput" class="form-label">Name:</label>
             <input type="text" id="destinationNameInput" class="form-control" required><br>
 
@@ -34,7 +44,7 @@
             <label for="destinationRatingInput" class="form-label">Rating:</label>
             <input type="number" id="destinationRatingInput" class="form-control"><br>
 
-            <button type="submit" class="btn btn-success">Add Destination</button><br>
+            <button type="submit" class="btn btn-success">Add Destination</button><br><br>
 
         </form>
 
